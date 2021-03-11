@@ -5,7 +5,7 @@
 - One update per trajectory is not sample efficient
 
 ## Minorize - maximization algorithm (MM)
-- Research questions: Does any policy update always improve the expected rewards.   
+- Research questions: Does any policy update always improve the expected rewards. How can we optimize a policy to maximize the rewards  
 => MM iteratively maximize a lower bound function approximating the expected reward locally
 ![MM algo](./TRPO/MMAlgo.jpeg)
 
@@ -25,6 +25,8 @@ In PG, current policy is used to computer PG. So whenever the policy is changed,
 
 
 ## Natural gradient:
+### What is the maximum step size in a trust region ?
+=> KL-divergence contrains  
 The stepwise in parameter space is determined by considering the KL divergence in the distributions before and after the update
 ![MM algo](./TRPO/natural_gradient_1.png)
 
@@ -35,7 +37,7 @@ The stepwise in parameter space is determined by considering the KL divergence i
 ## TRPO: Important sampling + Trust region optimization + Natural gradient
 - Objective function: ![MM algo](./TRPO/TRPO_objective_fuction.png)
 - Use KL-divergence to measure difference between two data distribution p and q  
-=> Lower bound for MM algo: ![MM algo](./TRPO/Lower_bound.jpeg). This also establish upper bound error for the objective function => trust region  
+=> Lower bound for MM algo: ![MM algo](./TRPO/Lower_bound.jpeg) This also establish upper bound error for the objective function => trust region  
 => this equivalent to ![MM algo](./TRPO/natural_gradient_1.png)
 - Use natural policy gradient to caculate learning rate  
 - need to verify the ne-7w policy first before commits the change
