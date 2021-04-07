@@ -22,3 +22,11 @@ With clipped objective, we compute a ratio between the new policy and the old po
 if new policy is much different from the old one => clip estimated advantage function
 ![MM algo](./TRPO/clip_ojbective.png)
 
+Advantage is positive:  
+Suppose the advantage for that state-action pair is positive, in which case its contribution to the objective reduces to [formulation]  
+Because the advantage is positive, the objective will increase if the action becomes more likely—that is, if \pi_{\theta}(a|s) increases. But the min in this term puts a limit to how much the objective can increase. Once \pi_{\theta}(a|s) > (1+\epsilon) \pi_{\theta_k}(a|s), the min kicks in and this term hits a ceiling of (1+\epsilon) A^{\pi_{\theta_k}}(s,a). Thus: the new policy does not benefit by going far away from the old policy.
+
+Advantage is negative: 
+Suppose the advantage for that state-action pair is negative, in which case its contribution to the objective reduces to [formulation] 
+
+Because the advantage is negative, the objective will increase if the action becomes less likely—that is, if \pi_{\theta}(a|s) decreases. But the max in this term puts a limit to how much the objective can increase. Once \pi_{\theta}(a|s) < (1-\epsilon) \pi_{\theta_k}(a|s), the max kicks in and this term hits a ceiling of (1-\epsilon) A^{\pi_{\theta_k}}(s,a). Thus, again: the new policy does not benefit by going far away from the old policy.

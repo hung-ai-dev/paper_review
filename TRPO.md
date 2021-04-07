@@ -11,7 +11,7 @@
 
 η is expected rewards, M is lower bound
 
-## Trust region
+## Trust region optimization
 - Gradient descent is a line search. We determine the descending direction first and then take a step towards that direction.
 - In the trust region, we determnie the maximum step size that we want to explore. Then we locate the optimal point within this region.
 
@@ -28,6 +28,7 @@ In PG, current policy is used to computer PG. So whenever the policy is changed,
 ### What is the maximum step size in a trust region ?
 => KL-divergence contrains  
 The stepwise in parameter space is determined by considering the KL divergence in the distributions before and after the update
+### closed-form
 ![MM algo](./TRPO/natural_gradient_1.png)
 
 ![MM algo](./TRPO/natural_gradient_2.png)

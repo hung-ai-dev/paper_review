@@ -22,3 +22,5 @@
 
 The goal of reinforcement learning is to find an optimal behavior strategy for the agent to obtain optimal rewards. The policy gradient methods target at modeling and optimizing the policy directly. The policy is usually modeled with a parameterized function respect to θ
 , πθ(a|s).
+
+Rollout: batch of data from simulation including observation, actions, rewards, advantage

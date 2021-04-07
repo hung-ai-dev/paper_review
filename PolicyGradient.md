@@ -9,3 +9,6 @@ Policy gradient:
 ```
 Policy Gradients suffer from high variance and low convergence
 ```
+
+- Stuck if waiting for termitate state
+- Estimated Q, A value => big error
