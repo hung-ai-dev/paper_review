@@ -25,5 +25,5 @@ TD residual: δ<sup>V</sup><sub>t</sub>=r<sub>t</sub> + γV(s<sub>t+1</sub>)−V
 λ ∈ [0,1]. Var(GAE(γ,1))>Var(GAE(γ,0)) due to the number of terms in the summation (more terms usually means higher variance),  
 γ determines thescale of the value function V<sup>π,γ</sup>  
 λ adjusts the bias-variance tradeoff   
-=> why we need to have both γ and λ ?, we can merge them into one constant  
+=> why we need to have both γ and λ ?, we can merge them into one constant?  
 According to the author, best value of λ is much lower than the best value of γ
