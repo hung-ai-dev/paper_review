@@ -51,8 +51,16 @@ H(π(s<sub>t</sub>)) is the Shannon entropy of the policy distribution parameter
 
 ### Objective
 
-optimize (similar to PPO)
+optimize (similar to PPO, just added entropy term)  
 ... on going ...
+
+## Term:
+α: the update ratio of value function. α=0.1 give best result  
+η: the relative importance of reward and entropy.
+
+## Experiment
+SPOD without DTAE > PPO  
+SDOP without entropy ~ PPO
 
 ## References:
 https://julien-vitay.net/deeprl/BasicRL.html#sec:temporal-difference
