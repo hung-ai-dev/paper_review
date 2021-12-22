@@ -5,8 +5,16 @@ Because agent must care about present and future: <objective function>
 - Supervised CL: no time dependence  
 - Continual RL: observed data is explicitly time dependence  
 
-# Explicit knowledge retention  
-## Shared parameters:  
+## Scenarions  
+- Task indicator is provided at test time  
+- Task indicator is NOT provided at test time  
+
+# Issues 
+- scenarios 
+- large number of tasks (how much 10-1000)  
+
+# 1. Explicit knowledge retention  
+## 1.1 Shared parameters: 
 
 Problems:  
 - requires a methodology of detecting current task  
@@ -17,10 +25,10 @@ Solutions:
 - store a prior about the extent of past usage of each parameter during learning in order to preserve important old knowledge https://arxiv.org/abs/1612.00796  
 - context information is stored for each task so that the weights can be explicitly decomposed into orthogonal sub-networks (Cheung https://arxiv.org/abs/1902.05522
 
-## Distillation based  
+## 1.2 Distillation based  
 - using one neural network as a target or soft target (policy, value function) for another  https://arxiv.org/abs/1805.06370  
 
-## Rehearsal based  
+## 1.3 Rehearsal based  
 Reinforcing the importance of experiences from the past distribution during continual RL is leveraging experience replay  
 
 Problems:  
@@ -30,14 +38,14 @@ Solutions:
 - pseudo-rehearsals  (generative experience replay)
 - learn to compress experiences during learning
 
-# Leverage shared structures  
-## Modularity and Composition
+# 2. Leverage shared structures  
+## 2.1 Modularity and Composition
 - Train NN modules which can be composed for tasks  
 ## State abtractions  
 - Map the default state into a different state representation  
-## Skill focused  
+## 2.2 Skill focused  
 - Lean macro-actions which control lower level actions  
-## Goal focused:  
-## Auxiliary tasks:  
+## 2.3 Goal focused:  
+## 2.4 Auxiliary tasks:  
 
-# Meta learning  
+# 3. Meta learning  
